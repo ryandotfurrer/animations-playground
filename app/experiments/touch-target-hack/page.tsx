@@ -28,7 +28,7 @@ export default function TouchTargetHackPage() {
             </Button>
           </div>
           <p>
-            You shouldn&apos;t, these are regular buttons with a standard touch
+            You shouldn't, these are regular buttons with a standard touch
             target.
           </p>
         </section>
@@ -53,12 +53,12 @@ export default function TouchTargetHackPage() {
           </div>
           <p>
             One of these buttons has a class of <code>touch-hitbox</code> which
-            makes it&apos;s touch target larger than the other buttons. If you
-            didn&apos;t notice, hover on the <em>outside</em> of each button and
-            you should see what I&apos;m talking about.What is this class doing
-            that allows that and why should we care?
+            makes it's touch target larger than the other buttons. If you didn't
+            notice, hover on the <em>outside</em> of each button and you should
+            see what I'm talking about.What is this class doing that allows that
+            and why should we care?
           </p>
-          <p>Not clear enough? Here&apos;s a demo:</p>
+          <p>Not clear enough? Here's a demo:</p>
           <div className="mx-auto flex items-center justify-center gap-12 rounded border bg-card py-16 *:scale-200 *:active:scale-194">
             <Button
               variant="outline"
@@ -75,9 +75,9 @@ export default function TouchTargetHackPage() {
             </Button>
           </div>
           <p>
-            See the red border? That&apos;s the touch target. The button is the
-            same size as the other buttons, but the touch target is larger. What
-            is this class doing that allows that and why should we care?
+            See the red border? That's the touch target. The button is the same
+            size as the other buttons, but the touch target is larger. What is
+            this class doing that allows that and why should we care?
           </p>
           <h3>
             What is <code>touch-hitbox</code> doing?
@@ -91,8 +91,8 @@ export default function TouchTargetHackPage() {
           </p>
           <p>
             This is incredibly useful on mobile devices where your buttons may
-            not be large enough to meet those standards, and you don&apos;t want
-            to ruin your design or layout.
+            not be large enough to meet those standards, and you don't want to
+            ruin your design or layout.
           </p>
           <pre className="rounded bg-secondary p-4 text-sm whitespace-pre-wrap">
             <code>
@@ -127,9 +127,9 @@ export default function TouchTargetHackPage() {
           </Alert>
           <p>
             While this is okay with a mouse or trackpad, it becomes a problem
-            with a touch screen. All of these buttons have actually been scaled
-            up 200% of their normal value for this demo. Below are examples at
-            their regular size.
+            with a touch screen. Not to mention, all of the buttons you've seen
+            so far have been scaled up 200% of their normal size. Below are
+            examples at their regular size.
           </p>
           <div className="mx-auto flex items-center justify-center rounded border bg-card py-16">
             <Button
@@ -155,7 +155,7 @@ export default function TouchTargetHackPage() {
             </Button>
           </div>
           <p>
-            While you can still click these easily, it&apos;s not ideal for your
+            While you can still click these easily, it's not ideal for your
             mobile users which still accounts for majority of web traffic.
             Across all websites,{" "}
             <strong>
