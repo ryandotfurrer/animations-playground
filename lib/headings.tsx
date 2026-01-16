@@ -92,33 +92,33 @@ export const H2 = ({
   children,
   ...props
 }: ComponentPropsWithoutRef<"h2">) => {
-  return createElement(HeadingWithCopy, { tag: "h2", ...props }, children);
+  return createElement(HeadingWithCopy, { tag: "h2", children, ...props }, children);
 };
 
 export const H3 = ({
   children,
   ...props
 }: ComponentPropsWithoutRef<"h3">) => {
-  return createElement(HeadingWithCopy, { tag: "h3", ...props }, children);
+  return createElement(HeadingWithCopy, { tag: "h3", children, ...props }, children);
 };
 
 export const H4 = ({
   children,
   ...props
 }: ComponentPropsWithoutRef<"h4">) => {
-  return createElement(HeadingWithCopy, { tag: "h4", ...props }, children);
+  return createElement(HeadingWithCopy, { tag: "h4", children, ...props }, children);
 };
 
 export const H5 = ({
   children,
   ...props
 }: ComponentPropsWithoutRef<"h5">) => {
-  return createElement(HeadingWithCopy, { tag: "h5", ...props }, children);
+  return createElement(HeadingWithCopy, { tag: "h5", children, ...props }, children);
 };
 
 export const H6 = ({
   children,
   ...props
 }: ComponentPropsWithoutRef<"h6">) => {
-  return createElement(HeadingWithCopy, { tag: "h6", ...props }, children);
+  return createElement(HeadingWithCopy, { tag: "h6", children, ...props }, children);
 };
