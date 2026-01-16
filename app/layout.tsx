@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Frontend Focus",
-  description: "My place to play, tinker, and experiment with all things frontend.",
+  description:
+    "My place to play, tinker, and experiment with all things frontend.",
 };
 
 export default function RootLayout({
@@ -30,27 +31,32 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <nav className="py-8">
-            <ul className="flex justify-between">
-              <div>
-                <li>
-                  <Link href="/">Frontend Focus</Link>
-                </li>
-              </div>
-              <div className="flex gap-4">
-                <li>
-                  <Link href="/courses">Courses</Link>
-                </li>
-                <li>
-                  <Link href="/experiments">Experiments</Link>
-                </li>
-              </div>
-            </ul>
-          </nav>
-          {children}
-          <footer className="py-8 text-sm text-foreground/50 mt-32">
-            <p>Copyright &copy; {new Date().getFullYear()} Frontend Focus. All rights reserved.</p>
-          </footer>
+        <nav className="py-8">
+          <ul className="flex justify-between">
+            <div>
+              <li>
+                <Link href="/" className="font-serif text-xl italic">
+                  Frontend Focus
+                </Link>
+              </li>
+            </div>
+            <div className="flex gap-4">
+              <li>
+                <Link href="/courses">Courses</Link>
+              </li>
+              <li>
+                <Link href="/experiments">Experiments</Link>
+              </li>
+            </div>
+          </ul>
+        </nav>
+        {children}
+        <footer className="mt-32 py-8 text-sm text-foreground/50">
+          <p>
+            Copyright &copy; {new Date().getFullYear()} Frontend Focus. All
+            rights reserved.
+          </p>
+        </footer>
       </body>
     </html>
   );

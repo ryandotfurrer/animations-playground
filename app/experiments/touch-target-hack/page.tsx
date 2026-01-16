@@ -1,20 +1,29 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertBody, AlertHeader } from "@/components/ui/alert";
+import { Switch } from "@/components/ui/switch";
 import { ArrowLeftIcon, ArrowRightIcon, PlusIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { H1, H2, H3 } from "@/lib/headings";
 
 export default function TouchTargetHackPage() {
+  const [showBorder, setShowBorder] = useState(true);
   return (
     <article>
       <div>
         <header className="my-24 text-center">
-          <h1>Touch Target Hack</h1>
+          <H1 className="text-balance">
+            How to ensure your buttons are accessible on mobile
+          </H1>
         </header>
       </div>
       <main className="space-y-24">
         <section className="space-y-8">
-          <h2>
+          <H2>
             No <code>touch-hitbox</code> class
-          </h2>
+          </H2>
           <p>Hover over each of these buttons, notice anything?</p>
           <div className="mx-auto flex items-center justify-center gap-12 rounded border bg-card py-16 *:scale-200 *:active:scale-194">
             <Button variant="outline" size="icon-xs">
@@ -33,9 +42,9 @@ export default function TouchTargetHackPage() {
           </p>
         </section>
         <section className="space-y-8">
-          <h2>
+          <H2>
             <em>With</em> <code>touch-hitbox</code> class
-          </h2>
+          </H2>
           <p>
             Next, hover over each of these buttons below; which one is
             different? <em>What</em> is different?
@@ -79,9 +88,9 @@ export default function TouchTargetHackPage() {
             size as the other buttons, but the touch target is larger. What is
             this class doing that allows that and why should we care?
           </p>
-          <h3>
+          <H3>
             What is <code>touch-hitbox</code> doing?
-          </h3>
+          </H3>
           <p>
             The <code>touch-hitbox</code> utility class creates a 44x44px
             invisible button <em>behind</em> the button you see. This{" "}
@@ -117,7 +126,7 @@ export default function TouchTargetHackPage() {
           </pre>
         </section>
         <section className="space-y-8">
-          <h2>What if you have multiple buttons close together?</h2>
+          <H2>What if you have multiple buttons close together?</H2>
           <Alert variant="note">
             <AlertHeader />
             <AlertBody>
@@ -128,31 +137,57 @@ export default function TouchTargetHackPage() {
           <p>
             While this is okay with a mouse or trackpad, it becomes a problem
             with a touch screen. Not to mention, all of the buttons you've seen
-            so far have been scaled up 200% of their normal size. Below are
+            so far have been scaled to 200% of their normal size. Below are
             examples at their regular size.
           </p>
-          <div className="mx-auto flex items-center justify-center rounded border bg-card py-16">
-            <Button
-              variant="outline"
-              size="icon-xs"
-              className="touch-hitbox-demo"
-            >
-              <ArrowLeftIcon className="size-3" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon-xs"
-              className="touch-hitbox-demo"
-            >
-              <ArrowRightIcon className="size-3" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon-xs"
-              className="touch-hitbox-demo"
-            >
-              <PlusIcon className="size-3" />
-            </Button>
+          <div className="mx-auto flex h-48 flex-col rounded border bg-card p-4">
+            <div className="flex h-full flex-col items-center justify-between">
+              <div className="flex h-full items-center">
+                <Button
+                  variant="outline"
+                  size="icon-xs"
+                  className={cn(
+                    "touch-hitbox-demo",
+                    !showBorder && "hide-border"
+                  )}
+                >
+                  <ArrowLeftIcon className="size-3" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon-xs"
+                  className={cn(
+                    "touch-hitbox-demo",
+                    !showBorder && "hide-border"
+                  )}
+                >
+                  <ArrowRightIcon className="size-3" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon-xs"
+                  className={cn(
+                    "touch-hitbox-demo",
+                    !showBorder && "hide-border"
+                  )}
+                >
+                  <PlusIcon className="size-3" />
+                </Button>
+              </div>
+              <div className="mt-auto flex items-center gap-2">
+                <label
+                  htmlFor="border-toggle"
+                  className="text-sm text-foreground/50"
+                >
+                  Show hitbox border
+                </label>
+                <Switch
+                  id="border-toggle"
+                  checked={showBorder}
+                  onCheckedChange={setShowBorder}
+                />
+              </div>
+            </div>
           </div>
           <p>
             While you can still click these easily, it's not ideal for your
